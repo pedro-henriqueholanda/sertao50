@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cl3rsjpkwd0vw"]
+
+[ext_resource type="Script" uid="uid://dxag5wi04nm67" path="res://interactions/interactable.gd" id="1_p5cy2"]
+[ext_resource type="Texture2D" uid="uid://di5t7l3judrkl" path="res://Prompt de interação em pixel art.png" id="2_kqm6q"]
+[ext_resource type="Texture2D" uid="uid://cwwbgtcrqf0v0" path="res://icon.svg" id="3_icon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(100, 100)
+
+[node name="Interactable" type="Area2D" unique_id=920274348]
+script = ExtResource("1_p5cy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043463966]
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Visual" type="Sprite2D" parent="." unique_id=1740309183]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_icon")
+
+[node name="Nome" type="Label" parent="." unique_id=832858097]
+offset_left = -60.0
+offset_top = 54.0
+offset_right = 60.0
+offset_bottom = 77.0
+horizontal_alignment = 1
+
+[node name="Prompt" type="Sprite2D" parent="." unique_id=112682309]
+visible = false
+z_index = 10
+position = Vector2(0, -125)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_kqm6q")

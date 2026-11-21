@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dqpo504opqnp0"]
+
+[ext_resource type="PackedScene" uid="uid://cl3rsjpkwd0vw" path="res://interactions/Interactable.tscn" id="1_ktwld"]
+[ext_resource type="PackedScene" uid="uid://bf5xemva61lr4" path="res://interactions/Player.tscn" id="2_sep0n"]
+[ext_resource type="PackedScene" path="res://interactions/objetos/Portao.tscn" id="3_portao"]
+[ext_resource type="PackedScene" path="res://interactions/ui/CaixaMensagem.tscn" id="4_caixa"]
+
+[node name="TesteInteracao" type="Node2D" unique_id=732637858]
+
+[node name="Player" parent="." unique_id=1815688717 instance=ExtResource("2_sep0n")]
+position = Vector2(100, 400)
+
+[node name="Carta" parent="." unique_id=195712605 instance=ExtResource("1_ktwld")]
+position = Vector2(300, 250)
+nome_objeto = "Carta"
+mensagens = Array[String](["Uma carta antiga, escrita à mão. A tinta está quase apagada."])
+cor = Color(0.95, 0.85, 0.5, 1)
+
+[node name="Cantil" parent="." unique_id=1280039067 instance=ExtResource("1_ktwld")]
+position = Vector2(300, 520)
+tipo = 1
+nome_objeto = "Cantil"
+mensagens = Array[String](["Você pegou um cantil de couro, ainda com um pouco de água."])
+item_id = "cantil"
+cor = Color(0.4, 0.7, 1, 1)
+
+[node name="Velho" parent="." unique_id=1458746349 instance=ExtResource("1_ktwld")]
+position = Vector2(560, 250)
+tipo = 3
+nome_objeto = "Velho Vaqueiro"
+mensagens = Array[String](["Boa tarde, moço. Veio de longe?", "Cuidado com a estrada, ela é longa e o sol não perdoa.", "Se precisar passar pelo portão, puxe a alavanca."])
+cor = Color(0.7, 0.5, 0.35, 1)
+
+[node name="Alavanca" parent="." unique_id=971726658 instance=ExtResource("1_ktwld")]
+position = Vector2(560, 520)
+tipo = 2
+nome_objeto = "Alavanca"
+mensagens = Array[String](["Você puxou a alavanca. O portão se abriu."])
+evento_id = "abrir_portao"
+uma_vez = true
+cor = Color(1, 0.4, 0.4, 1)
+
+[node name="Portao" parent="." unique_id=817182895 instance=ExtResource("3_portao")]
+position = Vector2(900, 400)
+
+[node name="CaixaMensagem" parent="." unique_id=1786332781 instance=ExtResource("4_caixa")]
